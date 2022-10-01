@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive</title>
+    <style>
+        *{ margin: 0; box-sizing: border-box;}
+        a{ text-decoration: none;}
+        img{ vertical-align: bottom;}
+        ul{ list-style: none; padding: 0;}
+        body{
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+        .container{width: 1200px;margin: auto;}
+        header{ padding: 10px; background: lightcyan;}
+        nav{ background: #222; color: #fff; padding: 5px; overflow-x: auto;}
+        nav ul{ display: flex; }
+        nav ul li{ margin-right: 10px;}
+        nav ul li a{ display: block; padding: 8px 14px; color: inherit;}
+        nav p{ display: none; }
+        nav button{ border: 1px solid #fff; background: transparent; border-radius: 5px; display: none;}
+        nav button span{ display: block; height: 2px; background: #fff; width: 50px; margin: 5px 0;}
+        main{ display: flex; flex-flow: row wrap;  background: lightsteelblue;}
+        aside{ flex: 1 0 25%; padding: 10px;}
+        article{ flex: 1 0 75%; padding: 10px;}
+        .row{ display: flex; flex-flow: row wrap;}
+        .row section{ flex: 1 0 25%; padding: 10px; max-width: 25%;}
+        footer{ padding: 10px; background: #222; color: #fff;}
+        .img-resp{ max-width: 100%; height: auto;}
+
+
+        @media print {
+            body{ font-family: monospace;}   
+            aside, article{ flex: 1 0 100%; max-width: 100%;}
+        }   
+        
+        /* @media  screen and (orientation:portrait){
+            header{ background: red;}
+        } */
+
+        @media screen  and (max-width:1220px){
+            .container{ width: 960px;}
+        }
+        @media screen  and (max-width:980px){
+            .container{ width: 768px;}
+            .row section{ flex-basis: 50%; max-width: 50%;}
+        }
+        @media screen  and (max-width:767px){
+            .container{ width: 100%;}
+        }
+        @media screen  and (max-width:460px){
+            nav ul li{ flex: 1 0 26%;}
+            aside, article{ flex-basis: 100%;}
+            .row section{ flex-basis: 100%; max-width: 100%;}
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Brand</h1>
+        </header>
+        <nav>
+            <p>Menu</p>
+            <button aria-label="Mobile Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul>
+                <li><a href="">Home</a></li>
+                <li><a href="">About</a></li>
+                <li><a href="">Archives</a></li>
+                <li><a href="">Course</a></li>
+                <li><a href="">Blog</a></li>
+                <li><a href="">Contact</a></li>
+            </ul>
+            
+        </nav>
+        <main>
+            <aside>
+            <ol>
+                <li>List</li>
+                <li>List</li>
+                <li>List</li>
+                <li>List</li>
+                <li>List</li>
+                <li>List</li>
+            </ol>
+            </aside>
+            <article>
+                <h2>Article</h2>
+                <img src="img/demo.jpg" alt="" class="img-resp" width="880" height="300">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam sunt totam laudantium dolorem quidem aut tempore id similique molestiae expedita exercitationem, natus aliquam vitae deserunt laborum quaerat officia, velit repellat.</p>
+                <div class="row">
+                    <section><h3>Section 1</h3> 
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus cumque expedita ad quas hic ab, earum autem soluta, assumenda, quaerat dolorum? Cupiditate tempora blanditiis accusamus aperiam suscipit enim modi nemo?</p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus cumque expedita ad quas hic ab, earum autem soluta, assumenda, quaerat dolorum? Cupiditate tempora blanditiis accusamus aperiam suscipit enim modi nemo?</p>
+                        
+                    </section>
+                    <section><h3>Section 2</h3> 
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquam nihil expedita non et harum. Minus distinctio officiis nesciunt aspernatur sequi cumque quam perspiciatis quibusdam voluptatem eaque accusamus, ipsa voluptate laboriosam.</p>
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquam nihil expedita non et harum. Minus distinctio officiis nesciunt aspernatur sequi cumque quam perspiciatis quibusdam voluptatem eaque accusamus, ipsa voluptate laboriosam.</p>
+                       
+                    </section>
+                    <section><h3>Section 3</h3> 
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquam nihil expedita non et harum. Minus distinctio officiis nesciunt aspernatur sequi cumque quam perspiciatis quibusdam voluptatem eaque accusamus, ipsa voluptate laboriosam.</p>
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquam nihil expedita non et harum. Minus distinctio officiis nesciunt aspernatur sequi cumque quam perspiciatis quibusdam voluptatem eaque accusamus, ipsa voluptate laboriosam.</p>
+                       
+                    </section>
+                    <section><h3>Section 4</h3> 
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquam nihil expedita non et harum. Minus distinctio officiis nesciunt aspernatur sequi cumque quam perspiciatis quibusdam voluptatem eaque accusamus, ipsa voluptate laboriosam.</p>
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquam nihil expedita non et harum. Minus distinctio officiis nesciunt aspernatur sequi cumque quam perspiciatis quibusdam voluptatem eaque accusamus, ipsa voluptate laboriosam.</p>
+                    </section>
+                </div>
+                <video src="media/techaltum.mp4" class="img-resp" width="1280" height="720" controls muted width=""></video>
+            </article>
+        </main>
+        <footer>
+            <p>&copy; 2022</p>
+        </footer>
+    </div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>  
+<script>
+$(function(){
+    $("nav button").click(function(){
+        $("nav ul").slideToggle()
+    });
+    $("nav button").focusout(function(){
+        $("nav ul").slideUp(0)
+    })
+})
+</script> 
+</body>
+</html>
